@@ -33,7 +33,10 @@ def dig(url, deep) :
               logFile.write(suburl + "\n")
               logFile.flush()
 
-            dig(suburl, deep + 1)
+            try:
+              dig(suburl, deep + 1)
+            except:
+              print suburl + " can not connect" 
 
 def main():
     global record 
